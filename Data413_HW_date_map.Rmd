@@ -29,3 +29,21 @@ date_info <- data.frame(
 #Print to see the correct output
 head(date_info, 15) #table is long, so only show 15 outputs
 ```
+
+
+# Question 2:
+Given the following dates, compute the difference in months and weeks between each consecutive pair.
+```{r}
+sample_dates <- c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05")
+
+#Parse into dates
+sample_dates <- as.Date(c("2018-03-15", "2020-07-20", "2023-01-10", "2025-09-05"))
+
+# Compute the difference in Months and Weeks
+diff_results <- data.frame(
+  Week_Date = time_length(diff(sample_dates), "week"),
+  Month_Date = time_length(diff(sample_dates), "month")
+  )
+
+diff_results
+```
